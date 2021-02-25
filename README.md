@@ -25,4 +25,4 @@ Sencilla Aplicacion para cambiar en tiempo real los digitos de una tarjeta detec
 
 ---
 
-# [Pruebalo aqui](https://gac982.github.io/converter-online/ "DEMO")
+# [Pruebalo aqui](https://gac982.github.io/creditcard-vuejs/ "DEMO")
