@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tipografia -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Creditcard VueJS</title>
+</head>
+<body>
+    <h1>Creditcard</h1>
+    <div id="app">
+        <section class="box">
+            <div class="card" :class="{'rotar': rotar }" @click="rotarTarjeta">
+                <div class="front">
+                    <div class="bancoYMarca">
+                        <div class="banco">Creditcard</div>
+                        <img v-if="numTarjeta[0] == 4" class="logo" src="img/001-visa.svg" alt="logo visa">
+                        <img v-else-if="numTarjeta[0] == 5" src="img/002-mastercard.svg" class="logo" alt="logo mastercard">
+                        <div v-else class="bloque"></div>
+                    </div>
+                    <div class="medio">
+                        <img class="chip" src="img/chip.png" alt="chip Tarjeta">
+                        <div class="digitos">
+                            <div class="numerosTarjeta">{{ numeroUno() }}</div>
+                            <div class="numerosTarjeta">{{ numeroDos() }}</div>
+                            <div class="numerosTarjeta">{{ numeroTres() }}</div>
+                            <div class="numerosTarjeta">{{ numeroCuatro() }}</div>
+                        </div>
+                    </div>
+                    <div class="nombreYVencimiento">
+                        <div class="grupoNombreTitular">
+                            <h5 class="subNombre">Nombre Titular</h5>
+                            <p class="nombreTitular">{{ nombreFiltrado() }}</p>
+                        </div>
+                        <div class="fechaVencimiento">
+                            <h5 class="subNombre">Fecha de Vecimiento</h5>
+                            <div class="numerosVencimiento">
+                                <div class="vencimiento">{{ mesFiltrado() }}</div>
+                                <span>/</span>
+                                <div class="vencimiento">{{ anyoFiltrado() }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="barraMagnetica"></div>
+                    <div class="datos">
+                        <div class="bajo">
+                            <p class="bajoTexto">Firma</p>
+                            <p class="firma">{{ nombreFiltrado() }}</p>
+                        </div>
+                        <div class="bajo">
+                            <p class="bajoTexto">CCV</p>
+                            <P class="ccv">{{ ccvFiltrado() }}</P>
+                        </div>
+                    </div>
+                    <div class="banco">
+                        <P class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, odit!</P>
+                        <a class="link" href="#">www.creditcard.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ingresar">
+            <h3 class="subtitulos">Ingresa los Datos Solicitados a Continuacion y Verifica tu Firma</h3>
+            <div class="numbers">
+                <label>
+                    Numeros de la Tarjeta:
+                    <input v-model="numTarjeta" class="numeros numTarjeta"  type="text">
+                    <input v-model="numTarjeta1" class="numeros numTarjeta"  type="text">
+                    <input v-model="numTarjeta2" class="numeros numTarjeta"  type="text">
+                    <input v-model="numTarjeta3" class="numeros numTarjeta"  type="text">
+                </label>
+            </div>
+            <div class="date">
+                <label>
+                    Fecha de Vencimiento:
+                    <input class="numeros" v-model="mes" type="number">
+                    <span>-</span>
+                    <input class="numeros" v-model="anyo" type="number">
+                </label>
+                <label>
+                    CCV
+                    <input class="numeros" v-model="ccv" type="number">
+                </label>
+            </div>
+            <div class="name">
+                <label>
+                    Nombre Titular:
+                    <input class="numeros nombre" v-model="nombre" type="text">
+                </label>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/vue.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

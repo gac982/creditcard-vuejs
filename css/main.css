@@ -1,0 +1,217 @@
+:root {
+    /* colores */
+    --bg-oscuro: #212529;
+    --gris-suave: #cfcfcf;
+    --azul-oscuro: #22303d;
+    --blanco: #fff;
+    --blanco-humo: #f5f5f5;
+    --verde: #198754;
+    --rojo-alerta: #cc2828;
+    --tarjeta: #232526;
+    /* box shadow */
+    --sombra: 1px 1px 6px 0px rgba(57,57,57,0.75);
+    /* tipografia */
+    --principal: 'Quicksand', sans-serif;
+    --firma: 'Homemade Apple', cursive;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--principal);
+    font-weight: 300;
+    height: 100vh;
+    color: var(--blanco);
+    background-color: var(--bg-oscuro);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+}
+.box {
+    width: 40rem;
+    height: 20rem;
+    border-radius: .2rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blanco-humo);
+}
+.ingresar {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+.subtitulos {
+    margin: 0;
+    text-align: center;
+}
+.numeros {
+    width: 3rem;
+    height: .8rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .2rem;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    text-align: center;
+}
+.numTarjeta {
+    width: 3rem;
+    text-align: center;
+}
+.nombre {
+    width: 12rem;
+    text-transform: uppercase;
+}
+.front, .bancoYMarca, .medio, .grupoNombreTitular, .digitos, .nombreYVencimiento, .fechaVencimiento, .numerosVencimiento {
+    display: flex;
+}
+.card {
+    position: relative;
+    transition: .3s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+.card > div {
+    width: 22rem;
+    height: 13rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--tarjeta);
+    flex-direction: column;
+    grid-gap: 2rem;
+    box-shadow: var(--sombra);
+}
+.rotar {
+    transform: rotateY(180deg);
+}
+/* parte delantera */
+.bancoYMarca {
+    justify-content: space-between;
+    align-items: center;
+}
+.medio {
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 3rem;
+}
+.bloque {
+    width: 3rem;
+    height: 3rem;
+}
+.chip {
+    width: 3rem;
+}
+.grupoNombreTitular {
+    flex-direction: column;
+}
+.digitos {
+    justify-content: space-evenly;
+}
+.numerosTarjeta {
+    margin-right: .5rem;
+    font-size: 1.5rem;
+}
+.nombreYVencimiento {
+    height: 3rem;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.fechaVencimiento {
+    flex-direction: column;
+}
+.numerosVencimiento {
+    align-items: center;
+}
+.subNombre, .nombreTitular {
+    margin: 0;
+}
+.subNombre {
+    font-weight: 100;
+}
+.nombreTitular, .vencimiento {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+/* parte de atras */
+.back {
+    position: absolute;
+    top: 0rem;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.barraMagnetica {
+    height: 2rem;
+    background-color: var(--blanco-humo);
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    width: 100%;
+}
+.bajo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.bajoTexto {
+    margin: 0;
+}
+.firma, .ccv {
+    background-color: var(--blanco-humo);
+    height: 2rem;
+}
+.firma {
+    width: 13rem;
+    margin: 0;
+    padding: 0 1rem;
+    text-align: center;
+    color: var(--tarjeta);
+    font-family: var(--firma);
+}
+.ccv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+}
+.datos {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.texto {
+    font-size: .7rem;
+}
+.link {
+    color: var(--blanco-humo);
+    font-size: .7rem;
+    font-weight: bold;
+}
